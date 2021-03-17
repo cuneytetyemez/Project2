@@ -1,3 +1,5 @@
+            PROJECT 2
+
 
 I'm trying to build the appointment application for health clinic. There is gonna be two buttons on the main page. First button, i'm gonna use for the patients information. Such as, Name, DOB , Address, Phone Number, PIN number ( it's gonna be unique number ) and insurance information. When the patients entered this information they will be able to save it. Second button for Cancel it. If the patient want to cancel their appointment they are going to need it their PIN number.After the Cancelllation i will return them to the main page.
 
