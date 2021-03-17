@@ -13,15 +13,15 @@ https://www.icloud.com/iclouddrive/05yXjkmVSu5zEwckKE4J87pKQ#20210316_212925
 https://www.icloud.com/iclouddrive/0kFcMd3HDcEgGjs6uNyubJEdw#20210316_212933
 
 User Story
-​
+
 // As a user, I should be able to click the start the Book Appointment button // As a user, I should be able to click the Cancel Button // As a user, I should be able to enter to my information to the form // as i user when i entered the my pin number i should be able to cancel my appointment
 
 MVP
 ​I'm using Javascript, HTML and CSS for this app.
-.I will work with full-stack application using Node.js, Mongoose, Express and EJS
-.I will use the MVC file structure: Models, Views, Controllers
-.I will use at least one model with all 7 RESTful routes and full CRUD.
-.I will be deployed online and accessible to the public via Herok
+.I also work with full-stack application using Node.js, Mongoose, Express and EJS
+.I use the MVC file structure: Models, Views, Controllers
+.I use at least one model with all 7 RESTful routes and full CRUD.
+.I will be deployed online and accessible to the public via Heroku
 
 
 Stretch Goals
