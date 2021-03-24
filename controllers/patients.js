@@ -40,7 +40,8 @@ router.delete('/:PIN', (req, res) => {
 
 //SET UP EDIT ROUTE
 router.get('/:PIN/edit', (req, res) => {
-    Patient.findOne(req.params.PIN, (err, foundPatient) => {
+    Patient.findOne({PIN:req.params.PIN}, (err, foundPatient) => {
+        console.log(foundPatient)
         res.render('edit.ejs', {
             patient: foundPatient,
             // currentUser: req.session.currentUser
@@ -51,7 +52,7 @@ router.get('/:PIN/edit', (req, res) => {
 //setup Update Route
 
 router.put('/:PIN', (req, res) => {
-    Fruit.findOneAndUpdate(req.params.PIN, req.body, {new: true}, (err, updatedPatient) => {
+    Patient.findOneAndUpdate({PIN:req.params.PIN}, req.body, {new: true}, (err, updatedPatient) => {
         res.redirect('/')
     })
 })
