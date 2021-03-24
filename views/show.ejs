@@ -2,12 +2,50 @@
 <%- include('./partials/nav.ejs') %>
 
 <main>
+<style>
+    .text  {
+        position: relative;
+        top: 18px;
+        left: 10px;
+        border: 1px solid black;
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-right: 150px;
+        margin-left: 750px;
+        background-color: lightblue;
+        text-align: center;
+    }
+    img{
+        float: left;
+        width: 100px;
+        height: 100px;
 
-  <h4>Appointment Information</h4>
+        display: block;
+        
+        
+    }
+    
+</style>
+    
+
+   
+
+
+<div class='text'>
+
+
   
-  <h6>Patient Name <strong><%= patients.name %></strong></h6>
+
+  <h1>Appointment Information</h1><br/>
   
-  <p>Appointment Date <%= patients.name %> and Your PIN number is <%= patient.PIN %></p>
+  <h2>Patient Name: <strong><%=patient.Name%></strong></h2><br/>
+  
+  <h2>Appointment Date: <%= patient.Date %></h2><br/>
+  
+  <h2>PIN Number: <%= patient.PIN %></h2><br/>
+</div>  
+<a href="/patients/<%=patient.PIN%>/edit" class=""> Change Appointment</a>  
+<img src="https://dhs.lacounty.gov/wp-content/uploads/2020/11/Clip-board.png" alt="image" style="width: 25%;">
          
   <a href="/">Back to Main Page</a>
 </main>

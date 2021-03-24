@@ -4,15 +4,16 @@
 <main>
 
   <h4>Change Your Appointment  </h4>
-  <form method="POST" action="/patients/edit<%= patient.id %>?_method=PUT">
+  <form method="GET" action="patients/edit/<%=  %>?_method=PUT">
     <!-- NOTE: the form is pre-populated with values from the server  -->
-    
+
+
     <label>
-      <span>Name:</span>
-      <input type="text" name="name" value="<%=fruit.name%>" />
+      <span>Please Enter Your  New Date:</span>
+      <input type="date" name="Date" value="" />
     </label>
-          
-    <input type="submit" name="" value="Submit Changes"/>
+    
+    <input type="submit" name="" value="Change Appointment"/>
     </form>
 </main>
 

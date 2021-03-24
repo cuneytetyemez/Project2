@@ -2,9 +2,13 @@
 <%- include('./partials/nav.ejs') %>
 <main>
 
-  
+  <a href="patients/edit">Change Appointment</a>
+
+  <form method="POST" action="/patients/<%= patient.PIN %>?_method=DELETE">
+    <button>DELETE</button>
+  </form>
         
-  <a href="/patients">Book Appointment</a>
+  <a href="/patients"></a>
 </main>
 
 <%- include('./partials/footer.ejs') %>

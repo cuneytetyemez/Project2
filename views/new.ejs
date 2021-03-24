@@ -6,21 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APPOINTMENT FORM</title>
 </head>
+<style>
+    input[type=text], select {  
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=tel], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=email], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=date], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=number], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    h1  {
+        text-align: center;
+    }
+    
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    </style>
 <body>
-    <h1>APOOINTMENT FORM</h1>
+    <h1>APPOINTMENT FORM</h1>
     <form action="/patients" method="POST">
-        PIN: <input type="number" name="PIN" /> <br/>
-        Date: <input type="date" name="date" /> <br/>
-        Name: <input type="text" name="name" /> <br/>
-        DOB: <input type="date" name="dob" /> <br/>
-        Address1: <input type="text" name="Address1" /> <br/>
-        Address2: <input type="text" name="Address2" /> <br/>
-        City: <input type="text" name="City" /> <br/>
-        State: <input type="text" name="State" /> <br/>
-        Zip Code: <input type="number" name="ZipCode" /> <br/>
-        Phone Number: <input type="number" name="Phonenumber" /> <br/>
-        e-mail: <input type="email" name="email" /> <br/>
-        Insurance: <input type="text" name="Insurance" /> <br/>
+        PIN <input type="number" name="PIN" placeholder="Last four digit of your SSN"/> <br/>
+        Date <input type="date" name="Date" /> <br/>
+        Name <input type="text" name="Name" /> <br/>
+        DOB <input type="date" name="DOB" /> <br/>
+        Address1 <input type="text" name="Address1" /> <br/>
+        Address2 <input type="text" name="Address2" /> <br/>
+        City <input type="text" name="City" /> <br/>
+        State <input type="text" name="State" /> <br/>
+        Zip Code <input type="number" name="ZipCode" /> <br/>
+        Phone Number <input type="tel" name="Phonenumber" placeholder="123-456-78-90"/> <br/>
+        e-mail <input type="email" name="email" placeholder="abc@abc.com" /> <br/>
+        Insurance <input type="text" name="Insurance" /> <br/>
 
         <input type="submit" value="Book Appointment" />    
 

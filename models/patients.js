@@ -2,18 +2,18 @@ const mongoose = require('mongoose');
 const {Schema, model} = mongoose;
 
 const patientSchema = new Schema ({
-    PIN: {type: Number, required: true},
+    PIN: {type: String, required: true},
     Date: {type: Date, required: true},
     Name: {type: String, required: true},
-    DOB: {type: Date, required: true},
-    Address1: {type: String, required: true},
-    Address2: {type: String, required: true},
-    City: { type: String, required: true},
-    State: {type: String, required: true},
-    ZipCode: {type: Number, required: true},
-    Phonenumber: {type: Number, required: true, allowBlank: false },
-    email: {type: String, correctTld: true},
-    Insurance: {type: String, required: true}
+    DOB: {type: Date, required: false},
+    Address1: {type: String, required: false},
+    Address2: {type: String, required: false},
+    City: { type: String, required: false},
+    State: {type: String, required: false},
+    ZipCode: {type: Number, required: false},
+    Phonenumber: {type: Number, required: false, allowBlank: false },
+    email: {type: String, correctTld: false},
+    Insurance: {type: String, required: false}
 
     
 });
@@ -27,7 +27,7 @@ module.exports = Patient;
 
 // const patients = [
 //     {
-//         PIN: 001,
+//         PIN: 0001,
 //         Date: "09/02/2021",
 //         Name: "Cuneyt Etyemez",
 //         DOB: "08/16/1986",
@@ -41,7 +41,7 @@ module.exports = Patient;
 //         Insurance: "Blue Cross Blue Shield",
 //     },
 //     {
-//         PIN: 002,
+//         PIN: 0002,
 //         Date: "09/07/2021",
 //         Name: "Thomas Edison",
 //         DOB: "08/19/1986",
@@ -55,7 +55,7 @@ module.exports = Patient;
 //         Insurance: "Blue Cross Blue Shield",
 //     },
 //     {
-//         PIN: 003,
+//         PIN: 0030,
 //         Date: "09/05/2021",
 //         Name: "Franz Kafka",
 //         DOB: "08/24/1986",

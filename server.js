@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const patients = require('./models/patients.js');
-const PORT = 3333;
+const PORT = process.env.PORT
+const session = require('express-session');
 
 
 
@@ -50,6 +51,12 @@ app.use(express.json())
 
 app.use(express.urlencoded({extended: true}))
 
+app.get('/patients', (req, res) => {
+    res.render('index.ejs', {
+        allPatients: patients
+    })
+})
+
 
 
 
@@ -59,6 +66,12 @@ app.use(express.urlencoded({extended: true}))
 //requiring the patient Controller
 const patientController = require('./controllers/patients')
 app.use('/patients', patientController);
+
+// const usersControllers = require('./controllers/users')
+// app.use('/users',  usersControllers);
+
+// const sessionControllers = require('./controllers/sessions')
+// app.use('/sessions', sessionControllers);
 
 
 

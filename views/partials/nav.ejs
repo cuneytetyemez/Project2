@@ -3,11 +3,29 @@
         
         <span>
             <a href="/" class="">HOME</a>  | 
-            <a href="/patients" class=""> Book Appointment</a>  |
-            <a href="/patients/edit" class=""> Change Appointment</a>
+            <a href="/patients/new" class=""> Book Appointment</a>  |
+            <a href="/patients/edit" class=""> Change Appointment</a>  |
+            <a href="/patients/contact" class=""> Contact </a>  |
+            <a href="/patients/about" class=""> About</a>  |
             
         </span>
+        <ul class="right">          
+            
+            
+                
+                <li style="padding-right:15px;">Welcome </li>
+                
+                <li>
+                    <form action="/sessions?_method=DELETE" method="POST">
+                        <button>Log out</button>
+                    </form>
+                </li>
+           
+                <li><a href="/sessions/new">Log In</a></li>
+                <li><a href="/users/new">Sign Up</a></li>
                     
+                    
+        </ul>            
        
     </div>
     
