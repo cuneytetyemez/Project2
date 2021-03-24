@@ -53,7 +53,7 @@ router.get('/:PIN/edit', (req, res) => {
 
 router.put('/:PIN', (req, res) => {
     Patient.findOneAndUpdate({PIN:req.params.PIN}, req.body, {new: true}, (err, updatedPatient) => {
-        res.redirect('/')
+        res.redirect('/patients/confirm/' + req.params.PIN)
     })
 })
 
