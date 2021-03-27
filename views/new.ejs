@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>APPOINTMENT FORM</title>
 </head>
 <style>
@@ -43,6 +44,15 @@
       border-radius: 4px;
       box-sizing: border-box;
     }
+    input[type=datetime-local] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
     input[type=number], select {
       width: 100%;
       padding: 12px 20px;
@@ -74,13 +84,19 @@
       border-radius: 5px;
       background-color: #f2f2f2;
       padding: 20px;
+      
+    }
+    body {
+      background-color:  #f2f2f2;
+      max-width: 600px;
+      margin: 0% auto;
     }
     </style>
 <body>
     <h1>APPOINTMENT FORM</h1>
     <form action="/patients" method="POST">
         PIN <input type="number" name="PIN" placeholder="Last four digit of your SSN"/> <br/>
-        Date <input type="date" name="Date" /> <br/>
+        Date <input type="datetime-local" name="Date"  /> <br/>
         Name <input type="text" name="Name" /> <br/>
         DOB <input type="date" name="DOB" /> <br/>
         Address1 <input type="text" name="Address1" /> <br/>

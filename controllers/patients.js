@@ -7,19 +7,25 @@ const Patient = require('../models/patients')
 //setup index for patients
 
 router.get('/', (req, res) => {
-    res.render('home.ejs')
+    res.render('home.ejs',{
+        currentUser: req.session.currentUser
+    })
+    
 })
 
 //patients show route
 router.get('/confirm/:PIN', (req, res) => {
     Patient.findOne({PIN: req.params.PIN}, (err, foundPatient) => {
+        if (err) {
+            res.send(err.message)
+        }
         console.log(req.params.PIN)
         console.log("below found Patient")
         console.log(foundPatient)
         res.render('show.ejs', {
         
             patient: foundPatient,
-            // currentUser: req.session.currentUser
+            currentUser: req.session.currentUser
         })     
     })
  
@@ -33,7 +39,7 @@ router.delete('/:PIN', (req, res) => {
             console.log(err)
 
         }else {
-            res.redirect('/')
+            res.redirect('/deleted')
         }
     })
 })
@@ -44,7 +50,7 @@ router.get('/:PIN/edit', (req, res) => {
         console.log(foundPatient)
         res.render('edit.ejs', {
             patient: foundPatient,
-            // currentUser: req.session.currentUser
+            currentUser: req.session.currentUser
         } )
     })
 })

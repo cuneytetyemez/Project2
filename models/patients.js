@@ -3,7 +3,7 @@ const {Schema, model} = mongoose;
 
 const patientSchema = new Schema ({
     PIN: {type: String, required: true},
-    Date: {type: Date, required: true},
+    Date: {type: Date, required: true, default: Date.now},
     Name: {type: String, required: true},
     DOB: {type: Date, required: false},
     Address1: {type: String, required: false},

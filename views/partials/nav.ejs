@@ -1,10 +1,14 @@
 <nav>
     <div>
+        <style>
+            span    {
+                text-align: left;
+            }
+        </style>
         
         <span>
             <a href="/" class="">HOME</a>  | 
             <a href="/patients/new" class=""> Book Appointment</a>  |
-            <a href="/patients/edit" class=""> Change Appointment</a>  |
             <a href="/patients/contact" class=""> Contact </a>  |
             <a href="/patients/about" class=""> About</a>  |
             
@@ -13,7 +17,7 @@
             
             
                 
-                <li style="padding-right:15px;">Welcome </li>
+                <li style="padding-right:15px;">Welcome <%= currentUser?.username%></li>
                 
                 <li>
                     <form action="/sessions?_method=DELETE" method="POST">

@@ -2,14 +2,77 @@
 <%- include('./partials/nav.ejs') %>
 
 <main>
+<style>
+    img {
+        align-items: center;
+        bottom: 100%;
+        max-width: 100%;  
+        height: auto;   
+        
+        
+    }
+    .test {
+        position: absolute;
+        height: 20px;
+        top: 25%;
+        left: 50%;
+        z-index: 25;
+        transform: translate(-50%, -50%);
+    }
+    .cover {
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0,0.5);
+        z-index: 20;
+    }
+    .closebutton {
+        text-align: center;
+        font-size: xx-large;
+        display: block;
+        padding: 20px 60px;
+        margin: 0 auto;
+            
+
+    }
+    body {
+        background-color:#f2f2f2;
+    }
+</style>    
 
     <h1>WALTHAM MEDICAL CENTER</h1>
     
+    <div class="test">
+
+        <img src="https://dhs.lacounty.gov/wp-content/uploads/2020/11/Clip-board.png" alt="">
+        <button class= "closebutton">
+            OK
+        </button>
+        
+    </div>
     
     <div>
         <img 
            src="https://www.mainehealth.org/-/media/Shared-Images/Hero-Banner-Images/Maine-Medical-Center/MMC-spring-sunset-2020.jpg" width="1875" height="690">
     </div>
+    <div class="cover">
+
+        
+
+    </div>
+    
 </main>
+
+<script>
+    const button = document.querySelector(".closebutton")
+    console.log(button)
+        button.onclick = () =>  {
+            console.log("test")
+            document.querySelector(".cover").style.visibility = "hidden"
+            document.querySelector(".test").style.visibility = "hidden"
+        }
+</script>
 
 <%- include('./partials/footer.ejs') %>

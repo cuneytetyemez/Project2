@@ -51,6 +51,20 @@ app.use(express.json())
 
 app.use(express.urlencoded({extended: true}))
 
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
+    saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
+}))
+
+const isAuthenticated = (req, res, next) => {
+    console.log('her')
+    if (req.session.currentUser) {
+        return next()
+    } else {
+        res.redirect('/sessions/new')
+    }
+}
 app.get('/patients', (req, res) => {
     res.render('index.ejs', {
         allPatients: patients
@@ -65,14 +79,15 @@ app.get('/patients', (req, res) => {
 //i will look on the fruitControllers.
 //requiring the patient Controller
 const patientController = require('./controllers/patients')
-app.use('/patients', patientController);
+app.use('/patients',isAuthenticated, patientController);
 
-// const usersControllers = require('./controllers/users')
-// app.use('/users',  usersControllers);
+const usersControllers = require('./controllers/users')
+app.use('/users',  usersControllers);
 
-// const sessionControllers = require('./controllers/sessions')
-// app.use('/sessions', sessionControllers);
-
+const sessionControllers = require('./controllers/sessions')
+console.log(typeof sessionControllers)
+app.use('/sessions', sessionControllers);
+console.log(typeof patientController)
 
 
 
@@ -80,11 +95,20 @@ app.use('/patients', patientController);
 //SETTING UP HOMEPAGE ROUTE
 
 app.get('/', (req, res) => {
+    console.log(req.session)
     res.render('home.ejs', {
-        allPatients: patients
+        allPatients: patients,
+        currentUser: req.session.currentUser
     })
 })
 
+app.get('/deleted', (req, res) => {
+    console.log(req.session)
+    res.render('delete.ejs', {
+        allPatients: patients,
+        currentUser: req.session.currentUser
+    })
+})
 
 
 

@@ -2,18 +2,34 @@
 <%- include('../partials/nav.ejs') %>
 
     <main>
+        <style>
+         
+         body   {
+             text-align: center;
+             background-color: #f2f2f2;
+         }
+         form   {
+             display: inline-block;
+         }
+         nav    {
+          text-align: left;
+         }
+   
+         
+     
+        </style>
 
-        <h4>New User Page</h4>
+        <h4>New User</h4>
 
         <form action="/users" method="POST">
 
             <label>
-                <span>username:</span>
+                <span>Username:</span>
                 <input type="text" name="username" />
             </label>
 
             <label>
-                <span>password:</span>
+                <span>Password:</span>
                 <input type="password" name="password" />
             </label>
             <br>

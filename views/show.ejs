@@ -4,25 +4,29 @@
 <main>
 <style>
     .text  {
-        position: relative;
-        top: 18px;
-        left: 10px;
-        border: 1px solid black;
-        margin-top: 100px;
-        margin-bottom: 100px;
-        margin-right: 150px;
-        margin-left: 750px;
+        
+        border: 10px solid black;
+        font-size: 5px;
+        
         background-color: lightblue;
         text-align: center;
     }
     img{
         float: left;
-        width: 100px;
-        height: 100px;
+        width: 50px;
+        height: 50px;
 
         display: block;
         
         
+    }
+    button  {
+      text-align: center;
+     margin-top: 0%;
+    }
+    form  {
+      text-align: center ;
+    
     }
     
 </style>
@@ -40,14 +44,21 @@
   
   <h2>Patient Name: <strong><%=patient.Name%></strong></h2><br/>
   
-  <h2>Appointment Date: <%= patient.Date %></h2><br/>
+  <!-- <h2>Appointment Date: <%=(patient.Date.getMonth()+1) + "/" + patient.Date.getDate() + "/" + patient.Date.getFullYear()%></h2><br/> -->
+  <h2>Appointment Date: <%=patient.Date.toDateString()%></h2><br/>
+  <h2>Appointment Hour: <%= patient.Date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })%></h2><br/>
   
   <h2>PIN Number: <%= patient.PIN %></h2><br/>
 </div>  
-<a href="/patients/<%=patient.PIN%>/edit" class=""> Change Appointment</a>  
-<img src="https://dhs.lacounty.gov/wp-content/uploads/2020/11/Clip-board.png" alt="image" style="width: 25%;">
+<a href="/patients/<%=patient.PIN%>/edit" class=""> Change Appointment</a></br> |
+<a href="/">Back to Main Page</a></br>
+</main>
+<form method="POST" action="/patients/<%=patient.PIN%>?_method=DELETE"> 
+  <button>Delete Appointment</button>
+</form>
          
-  <a href="/">Back to Main Page</a>
+  
+  
 </main>
 
 <%- include('./partials/footer.ejs') %>
