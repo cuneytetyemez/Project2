@@ -6,15 +6,15 @@ I'm trying to build the appointment application for the health clinic customers.
 
 Wireframes
 
-https://www.icloud.com/iclouddrive/0_ar989WzwsVX2_5otELkJWlg#20210316_212902
+https://appointment24.herokuapp.com/
+https://appointment24.herokuapp.com/users/new
+https://appointment24.herokuapp.com/sessions/new
 
-https://www.icloud.com/iclouddrive/05yXjkmVSu5zEwckKE4J87pKQ#20210316_212925
 
-https://www.icloud.com/iclouddrive/0kFcMd3HDcEgGjs6uNyubJEdw#20210316_212933
 
 User Story
 
-// As a user, I should be able to click the start the Book Appointment button // As a user, I should be able to click the Cancel Button // As a user, I should be able to enter to my information to the form // as i user when i entered the my pin number i should be able to cancel my appointment
+// As a user, I should be able to click the start the Book Appointment // As a user, I should be able to click the Cancel Button // As a user, I should be able to enter to my information to the form // as i user when i entered the my pin number i should be able to cancel my appointment
 
 MVP
 
@@ -27,6 +27,8 @@ MVP
 
 Stretch Goals
 
+. 
+.
 
 Super Stretchy Goals (maybe for after)
 
